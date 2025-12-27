@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robust Mechanical</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="/resources/robust-logo-img-bg.webp" type="image/webp" />
+  <link rel="stylesheet" href="./flex.css" />
+  <link rel="stylesheet" href="./boilers.css" />
+  <script src="./animations.js" defer></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script src="./script.js" defer></script>
+  <script src="./boilers.js" defer></script>
+
+</head>
+
+<body class="event-page">
+  <header class="robust-header">
+    <div class="robust-page-links flex flex-row items-center">
+      <div class="robust-logo">
+        <a href="./index.html">
+                            <img src="./resources/robust-logo-img-bg-navy.webp" alt="Robust Plumbing Logo">
+
+      </div>
+    </div>
+
+    <div class="header">
+      <button id="menu-toggle" class="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="slide-menu" class="nav-links">
+        <ul class="flex flex-col gap-3">
+          <li><a class="page-link" href="./index.html">Home</a><div class="underline-nav"></div></li>
+          <li><a class="page-link" href="./boilers.html">HVAC & Heating</a><div class="underline-nav"></div></li>
+          <li><a class="page-link" href="./portfolio.html">Portfolio</a><div class="underline-nav"></div></li>
+          <li><a class="page-link" href="./contact.html">Contact</a><div class="underline-nav"></div></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="boilers-main-wrapper">
+
+    <div class="promo-banner flex flex-row flex-wrap items-center justify-center gap-1 go-to-contact">
+      <p class="promo-track flex flex-row gap-1" id="promo-track"></p>
+    </div>
+
+    <!-- <section class="boiler-main-container" id="boilersSection">
+      <h1 class="visually-hidden">HVAC and Heating Services by Robust Mechanical</h1>
+      <div class="boiler-main-wrapper flex flex-row flex-wrap gap-1">
+        <div class="boiler-text-wrapper flex flex-col gap-2 justify-center items-start">
+          <div class="boiler-text-heading">
+            <h1><span class="color-accent">HVAC & Heating</span> solutions by Robust!</h1>
+            <div class="underline-left"></div>
+          </div>
+          <p>At Robust Mechanical, we specialize in providing reliable, energy-efficient HVAC and heating systems for both residential and commercial properties. From installation and repair to routine maintenance and system upgrades, our experienced technicians ensure your comfort all year round.</p>
+          <button class="robust-button-primary">GET A QUOTE</button>
+        </div>
+        <div class="boiler-image-wrapper animate-slide-left">
+          <img src="./resources/robust_van.png" alt="HVAC System Installation">
+        </div>
+      </div>
+    </section> -->
+
+    <section class="boiler-services-container flex flex-col items-center justify-center gap-2" id="hvacServices">
+      <h1><span class="color-accent">HVAC Services</span> we offer</h1>
+      <div class="boiler-services-wrapper flex flex-col md:flex-row gap-1 items-center justify-evenly">
+        <div class="boiler-services-image">
+          <img src="./resources/boiler-repair.webp" alt="HVAC Repair">
+        </div>
+        <div class="boiler-services-content flex flex-col gap-1">
+
+          <div class="boiler-service-card side-left">
+            <div class="boiler-service-card-header flex flex-row gap-1 items-center">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <h4>HVAC Installation</h4>
+            </div>
+            <p>Expert installation of heating, cooling, and ventilation systems designed for maximum efficiency and performance.</p>
+          </div>
+
+          <div class="boiler-service-card side-right">
+            <div class="boiler-service-card-header flex flex-row gap-1 items-center">
+              <i class="fa-solid fa-wrench"></i>
+              <h4>System Repair</h4>
+            </div>
+            <p>Quick and reliable repairs to restore your furnace, air conditioner, or ventilation system to optimal working condition.</p>
+          </div>
+
+          <div class="boiler-service-card side-left">
+            <div class="boiler-service-card-header flex flex-row gap-1 items-center">
+              <i class="fa-solid fa-gear"></i>
+              <h4>Maintenance & Tune-Ups</h4>
+            </div>
+            <p>Comprehensive inspections and preventive maintenance to extend the life of your HVAC equipment and improve efficiency.</p>
+          </div>
+
+          <div class="boiler-service-card side-right">
+            <div class="boiler-service-card-header flex flex-row gap-1 items-center">
+              <i class="fa-solid fa-recycle"></i>
+              <h4>System Replacement & Upgrades</h4>
+            </div>
+            <p>Upgrade to modern, energy-efficient systems that reduce costs and provide consistent comfort throughout the year.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="boiler-catalog flex flex-col gap-2" id="boilerCatalog">
+      <div class="boiler-catalog-container-header flex flex-row flex-wrap justify-center md:justify-between">
+        <h1>EXPLORE OUR <span class="color-accent">SYSTEMS</span></h1>
+        <div class="boiler-carousel-buttons flex flex-row gap-3">
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+
+      <div class="boiler-catalog-carousel" id="boilerCatalogCarousel">
+        <div class="boiler-catalog-container flex flex-row flex-wrap gap-2 items-center justify-center" id="boilerCatalogContainer">
+          <div id="serviceDetails" class="service-details flex flex-col gap-3">
+            <div class="service-filter-button flex flex-row flex-wrap gap-1">
+              <button class="robust-button-secondary active" data-category="hvac">Heating</button>
+              <button class="robust-button-secondary" data-category="chillers">Cooling</button>
+              <button class="robust-button-secondary" data-category="pumps">Ventilation</button>
+            </div>
+            <div class="swiper-container" id="servicesCarousel">
+              <div class="swiper-wrapper" id="swiperWrapper">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="boiler-types-section flex flex-col items-center justify-center gap-2" id="boilerTypes">
+      <h1>HVAC <span class="color-accent">System Types</span></h1>
+      <div class="boiler-types-wrapper flex flex-col-reverse lg:flex-row gap-1">
+
+        <div class="boiler-types-text">
+          <div class="boiler-text-item flex flex-col gap-1 active" data-type="combi">
+            <h1>FURNACE SYSTEMS</h1>
+            <div class="underline-left"></div>
+            <ul>
+              <li>Gas or electric-powered systems for reliable central heating.</li>
+              <li>Ideal for colder climates and large spaces.</li>
+              <li>Available in high-efficiency models for lower energy costs.</li>
+            </ul>
+          </div>
+
+          <div class="boiler-text-item flex flex-col gap-1" data-type="system">
+            <h1>HEAT PUMPS</h1>
+            <div class="underline-left"></div>
+            <ul>
+              <li>Provide both heating and cooling using electricity.</li>
+              <li>Energy-efficient and eco-friendly solution for year-round comfort.</li>
+              <li>Perfect for mild climates or supplemental systems.</li>
+            </ul>
+          </div>
+
+          <div class="boiler-text-item flex flex-col gap-1" data-type="conventional">
+            <h1>SPLIT SYSTEMS</h1>
+            <div class="underline-left"></div>
+            <ul>
+              <li>Separate indoor and outdoor units for cooling and heating.</li>
+              <li>Ideal for residential and small commercial setups.</li>
+              <li>Offers quiet operation and flexible installation options.</li>
+            </ul>
+          </div>
+
+          <div class="boiler-text-item flex flex-col gap-1" data-type="electric">
+            <h1>DUCTLESS MINI-SPLITS</h1>
+            <div class="underline-left"></div>
+            <ul>
+              <li>Zone-based heating and cooling without the need for ducts.</li>
+              <li>Perfect for additions, condos, or retrofit applications.</li>
+              <li>Energy-efficient and customizable for each room.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="boiler-types-images">
+          <img src="./resources/boiler-types/combi-boiler.webp" alt="Combi Boilers" data-type="combi" class="active" />
+          <img src="./resources/boiler-types/system-boiler.webp" alt="System Boilers" data-type="system" />
+          <img src="./resources/boiler-types/conventional-boiler.webp" alt="Conventional Boilers"
+            data-type="conventional" />
+          <img src="./resources/boiler-types/electric-boiler.webp" alt="Electric Boilers" data-type="electric" />
+        </div>
+      </div>
+    </section>
+
+    <section class="join-us shake-effect">
+      <div class="join-us-container flex flex-col items-center justify-center gap-1">
+        <h1>Some call it extra. We call it <span class="color-accent">robust</span>!</h1>
+        <button class="robust-button-secondary go-to-contact">GET A QUOTE</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-social">
+    <button id="toggleSocial" aria-label="Toggle Social Links">
+      <i class="fas fa-share-alt"></i>
+    </button>
+    <nav id="socialPopup" class="social-popup hidden" aria-label="Social Links">
+      <a href="tel:+16047123899" aria-label="Phone" class="icon cyan">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="mailto:info@robustmechanical.ca" aria-label="Email" class="icon magenta">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.facebook.com/robustmechanical" target="_blank" aria-label="Facebook" class="icon cyan">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://wa.me/16047123899?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20mechanical%20services%21"
+        target="_blank" rel="noopener noreferrer" class="icon magenta">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.instagram.com/robustmechanical/" class="icon magenta" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/robust-mechanical" class="icon magenta" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+    </nav>
+  </div>
+
+  <footer class="footer-section flex flex-col md:flex-row">
+    <section class="footer-info flex flex-col items-center justify-center">
+      <h4 class="visually-hidden">Logo and description</h4>
+     <div class="robust-logo-main">
+          <img src="./resources/robust-logo-bg-white.png" alt="">
+          </div>
+      <!-- <div class="footer-logo-image">
+        <img src="./resources/robust-logo-img-bg.webp" alt="Robust Mechanical Logo">
+      </div>
+      <div class="footer-info-content-wrapper">
+        <div class="footer-info-content content-robust">
+          <h2>ROBUST</h2>
+          <h2>ROBUST</h2>
+        </div>
+        <div class="footer-info-content content-plumbing">
+          <h2>MECHANICAL</h2>
+          <h2>MECHANICAL</h2>
+        </div>
+      </div> -->
+    </section>
+
+    <section class="footer-subscribe">
+      <h1 id="subHeading">Reach Out <span class="color-accent">Today!</span></h1>
+      <form class="subscribe-form flex flex-col gap-1" onsubmit="handleSubscribe(event)">
+        <p id="subText">Skip the wait — tell us what you need!</p>
+        <input type="email" id="subEmail" class="subscribe-input" placeholder="Enter your email" required />
+        <button class="robust-button-primary" type="submit">Subscribe</button>
+      </form>
+
+      <div class="sub-success" id="subSuccess">
+        <h1>Thank <span class="color-accent">you!</span></h1>
+        <p>Thanks for subscribing! Check out our HVAC & heating solutions in the meantime.</p>
+        <button class="robust-button-primary go-to-hvac">View HVAC Services</button>
+      </div>
+
+      <div class="sub-fail" id="subFail">
+        <p class="color-accent">Oops!</p>
+        <p>Please try again.</p>
+      </div>
+    </section>
+  </footer>
+
+  <div class="footer-copyright flex flex-row justify-center" id="footerCopyright"></div>
+</body>
+</html>
