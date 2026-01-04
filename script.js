@@ -1,43 +1,67 @@
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
-const track = document.getElementById("promo-track");
 
-async function fetchPromoLines(sheetId, sheetName = 'Sheet1') {
-  const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?sheet=${sheetName}&tq=select%20*`;
-  try {
-    const response = await fetch(sheetUrl);
-    const textData = await response.text();
+document.addEventListener("DOMContentLoaded", () => {
+  let lastScrollY = window.scrollY;
+  const header = document.getElementById("robustHeader");
 
-    const jsonData = JSON.parse(textData.substring(textData.indexOf('{'), textData.lastIndexOf('}') + 1));
-    const rows = jsonData.table.rows;
+  if (!header) return; // safety guard
 
-    // Clear previous content
-    track.innerHTML = '';
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
 
-    // Create promo items
-    rows.forEach(row => {
-      const promoText = row.c[0]?.v || '';
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // scrolling DOWN → show header
+      header.classList.add("robust-header-hidden");
+    } else {
+      header.classList.remove("robust-header-hidden");
 
-      const p = document.createElement('p');
-      p.innerHTML = `<i class="fa-solid fa-circle-info"></i> ${promoText}`;
-      track.appendChild(p);
-    });
+      // scrolling UP → hide header
+    }
 
-    // Duplicate the content for infinite loop effect
-    const clone = track.innerHTML;
-    track.innerHTML += clone;
+    lastScrollY = currentScrollY;
+  });
+});
 
-    // Add animation class to start scrolling
-    track.classList.add('scrolling');
 
-  } catch (error) {
-    console.error('Error fetching promo lines:', error);
-  }
-}
+// const track = document.getElementById("promo-track");
+
+// async function fetchPromoLines(sheetId, sheetName = 'Sheet1') {
+//   const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?sheet=${sheetName}&tq=select%20*`;
+//   try {
+//     const response = await fetch(sheetUrl);
+//     const textData = await response.text();
+
+//     const jsonData = JSON.parse(textData.substring(textData.indexOf('{'), textData.lastIndexOf('}') + 1));
+//     const rows = jsonData.table.rows;
+
+//     // Clear previous content
+//     track.innerHTML = '';
+
+//     // Create promo items
+//     rows.forEach(row => {
+//       const promoText = row.c[0]?.v || '';
+
+//       const p = document.createElement('p');
+//       p.innerHTML = `<i class="fa-solid fa-circle-info"></i> ${promoText}`;
+//       track.appendChild(p);
+//     });
+
+//     // Duplicate the content for infinite loop effect
+//     const clone = track.innerHTML;
+//     track.innerHTML += clone;
+
+//     // Add animation class to start scrolling
+//     track.classList.add('scrolling');
+
+//   } catch (error) {
+//     console.error('Error fetching promo lines:', error);
+//   }
+// }
 
 // Call with your Sheet ID and sheet name
-fetchPromoLines('1CKPqUcDt1Y-fZTMopPFhffEa5Gr3GM8hJybsk0Jo_9w', 'promotions');
+//fetchPromoLines('1CKPqUcDt1Y-fZTMopPFhffEa5Gr3GM8hJybsk0Jo_9w', 'promotions');
 
 
 
@@ -127,28 +151,28 @@ document.addEventListener("DOMContentLoaded", () => {
 if (document.body.classList.contains("home-page")) {
 
 
-  window.addEventListener("load", () => {
-    const modal = document.getElementById("welcomeModal");
-    const closeBtn = document.getElementById("closeModalBtn");
+  // window.addEventListener("load", () => {
+  //   const modal = document.getElementById("welcomeModal");
+  //   const closeBtn = document.getElementById("closeModalBtn");
 
-    // Check if modal was shown before
-    if (!localStorage.getItem("modalShown")) {
-      modal.classList.add("active");
-    }
+    
+  //   if (!localStorage.getItem("modalShown")) {
+  //     modal.classList.add("active");
+  //   }
 
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("active");
-      localStorage.setItem("modalShown", "true"); // mark as shown
-    });
+  //   closeBtn.addEventListener("click", () => {
+  //     modal.classList.remove("active");
+  //     localStorage.setItem("modalShown", "true"); // mark as shown
+  //   });
 
-    // Optional: close modal if clicking outside content
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-        localStorage.setItem("modalShown", "true"); // mark as shown
-      }
-    });
-  });
+    
+  //   modal.addEventListener("click", (e) => {
+  //     if (e.target === modal) {
+  //       modal.classList.remove("active");
+  //       localStorage.setItem("modalShown", "true"); // mark as shown
+  //     }
+  //   });
+  // });
 
 
   //   setTimeout(() => {
@@ -238,54 +262,51 @@ if (document.body.classList.contains("home-page")) {
     }
   };
 
-  // Initialize on DOM load
-  const circle = document.getElementById('featureCircle');
-  const desc = document.getElementById('featureDesc');
-  const features = document.querySelectorAll('.feature');
+  // const circle = document.getElementById('featureCircle');
+  // const desc = document.getElementById('featureDesc');
+  // const features = document.querySelectorAll('.feature');
 
-  function getActiveFeature() {
-    const circleTransform = window.getComputedStyle(circle).transform;
+  // function getActiveFeature() {
+  //   const circleTransform = window.getComputedStyle(circle).transform;
 
-    if (circleTransform === 'none') return 0;
+  //   if (circleTransform === 'none') return 0;
 
-    const matrix = new DOMMatrix(circleTransform); // WebKitCSSMatrix works too
-    const angleRad = Math.atan2(matrix.b, matrix.a);
-    const angleDeg = (angleRad * (180 / Math.PI));
+  //   const matrix = new DOMMatrix(circleTransform); // WebKitCSSMatrix works too
+  //   const angleRad = Math.atan2(matrix.b, matrix.a);
+  //   const angleDeg = (angleRad * (180 / Math.PI));
 
-    // Invert rotation to match visual direction
-    const normalized = (360 - angleDeg + 360) % 360;
+  //   const normalized = (360 - angleDeg + 360) % 360;
 
-    // Each feature is placed every 90 degrees
-    const index = Math.round(normalized / 90) % 4;
-    return index;
-  }
+  //   const index = Math.round(normalized / 90) % 4;
+  //   return index;
+  // }
 
-  function updateDescription() {
-    const index = getActiveFeature();
-    features.forEach((f, i) => {
-      if (i === index) {
-        f.classList.add('active-feature');
-      } else {
-        f.classList.remove('active-feature');
-      }
-    });
+  // function updateDescription() {
+  //   const index = getActiveFeature();
+  //   features.forEach((f, i) => {
+  //     if (i === index) {
+  //       f.classList.add('active-feature');
+  //     } else {
+  //       f.classList.remove('active-feature');
+  //     }
+  //   });
 
-    desc.classList.add('fade-out');
+  //   desc.classList.add('fade-out');
 
-    const activeFeature = features[index];
-    desc.innerHTML = `
-    <div class = "feature-content-data flex flex-col gap-1 ">
-    <h1>${activeFeature.dataset.title}</h1>
-    <div class="underline"></div>
-    <p> ${activeFeature.dataset.desc}</p>
-    <div class="bagde-flag-wrap">
-      <p href="#" class="bagde-flag"> CERTIFIED TECHNICIANS </p>
-    </div>
-    </div>`;
-  }
-  // Update description every second
-  setInterval(updateDescription, 10);
-  updateDescription();
+  //   const activeFeature = features[index];
+  //   desc.innerHTML = `
+  //   <div class = "feature-content-data flex flex-col gap-1 ">
+  //   <h1>${activeFeature.dataset.title}</h1>
+  //   <div class="underline"></div>
+  //   <p> ${activeFeature.dataset.desc}</p>
+  //   <div class="bagde-flag-wrap">
+  //     <p href="#" class="bagde-flag"> CERTIFIED TECHNICIANS </p>
+  //   </div>
+  //   </div>`;
+  // }
+
+  // setInterval(updateDescription, 10);
+  // updateDescription();
 
   document.addEventListener("DOMContentLoaded", () => vertical_slider.init());
 
@@ -411,37 +432,37 @@ if (document.body.classList.contains("home-page")) {
     '#8B0000'
   ];
 
-  document.addEventListener("DOMContentLoaded", () => {
-    function counter(id, start, end, duration) {
-      let obj = document.getElementById(id),
-        current = start,
-        range = end - start,
-        increment = end > start ? 1 : -1,
-        step = Math.abs(Math.floor(duration / range));
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   function counter(id, start, end, duration) {
+  //     let obj = document.getElementById(id),
+  //       current = start,
+  //       range = end - start,
+  //       increment = end > start ? 1 : -1,
+  //       step = Math.abs(Math.floor(duration / range));
 
-      const timer = setInterval(() => {
-        current += increment;
-        obj.textContent = current + ' +';
-        if (current === end) clearInterval(timer);
-      }, step);
-    }
+  //     const timer = setInterval(() => {
+  //       current += increment;
+  //       obj.textContent = current + ' +';
+  //       if (current === end) clearInterval(timer);
+  //     }, step);
+  //   }
 
-    let hasAnimated = false;
+  //   let hasAnimated = false;
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasAnimated) {
-          hasAnimated = true;
-          counter("count1", 0, 400, 3000);
-          counter("count2", 100, 50, 2500);
-          counter("count3", 0, 40, 3000);
-          // counter("count4", 0, 40, 3000);
-        }
-      });
-    }, { threshold: 0.5 });
+  //   const observer = new IntersectionObserver(entries => {
+  //     entries.forEach(entry => {
+  //       if (entry.isIntersecting && !hasAnimated) {
+  //         hasAnimated = true;
+  //         counter("count1", 0, 400, 3000);
+  //         counter("count2", 100, 50, 2500);
+  //         counter("count3", 0, 40, 3000);
+  //         // counter("count4", 0, 40, 3000);
+  //       }
+  //     });
+  //   }, { threshold: 0.5 });
 
-    observer.observe(document.getElementById('whoWeAre'));
-  });
+  //   observer.observe(document.getElementById('whoWeAre'));
+  // });
 
   function truncateWords(str, limit) {
     const words = str.split(' ');
@@ -624,4 +645,4 @@ async function handleSubscribe(event) {
 
 
 document.getElementById('footerCopyright').innerHTML = `
-   <p> &copy; <span id="year">${new Date().getFullYear()}</span> copyright reserved by <a href="mailto:amneeshsingh5@gmail.com" class="color-accent-light"> amneeshsingh5@gmail.com </a>. All rights reserved.</p>`
+   <p> &copy; <span id="year">${new Date().getFullYear()}</span> copyright reserved by <a href="mailto:amneeshsingh5@gmail.com" class="color-accent-light"> robust mechanical limited </a>. All rights reserved.</p>`

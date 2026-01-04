@@ -1,15 +1,31 @@
-.events-page {
-  background: url("./resources/event-bg.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: none;
+
+.boiler-main-container{
+  background-image: url('./resources/download.svg');
+  min-height: 100vh;
+  
+}
+.boiler-main-wrapper {
+background-color: var(--color-background);
+
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  padding: 5rem 2rem;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
 }
 
-.boiler-main-wrapper {
-  background-color: var(--color-surface);
-  padding: 5rem 1rem;
-  max-width: 1400px;
-  margin: 0 auto;
+.boiler-skyline {
+  width: 100%;
+  height: 280px;        /* control visible crop height */
+  overflow: hidden;
+}
+
+.boiler-skyline img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* 🔥 CROPS IMAGE */
+  object-position: center;
 }
 
 .boiler-text-wrapper {
