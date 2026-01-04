@@ -560,7 +560,7 @@ background-color: var(--color-background);
   width: 100%;
   overflow: hidden;
 
-  padding: 0rem 2rem 2rem 2rem;
+  padding: 0rem 1rem 2rem 1rem;
   
 }
 .hero-main{
@@ -734,14 +734,14 @@ color: var(--color-secondary-light);
 .image-main {
   width: 100%;
   border-radius: 24px;
- width: 80%;
+ width: 90%;
     
 }
 
 .image-top {
   position: absolute;
   top: -40px;              /* move up/down */
-  right: 30px;             /* move left/right */
+  right: 0px;             /* move left/right */
   width: 45%;            /* size of top image */
   border-radius: 20px;
 overflow: hidden;
