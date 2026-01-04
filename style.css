@@ -714,6 +714,7 @@ color: var(--color-secondary-light);
 
 .who-we-are {
   min-height: 100vh;
+ 
   height: auto;
   position: relative;
   background-color: var(--color-navy-dark);
@@ -722,7 +723,10 @@ color: var(--color-secondary-light);
   background-position: left;
   background-attachment: fixed;
 }
-
+.who-we-are-content{
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
 .image-side {
   background-color: var(--color-navy-dark);
@@ -761,7 +765,7 @@ img{
   background-color: var(--color-navy-dark);
 
   height: auto;
-  padding: 2rem 3rem;
+  padding: 2rem 1rem;
 
   width: 100%;
 
@@ -1151,7 +1155,7 @@ h1{
 /* vertical services */
 
 .content_container {
-  padding: 0rem 2rem;
+  padding: 0rem 1rem;
   p{
     color:var(--color-surface);
   }
@@ -1193,7 +1197,7 @@ h1{
 }
 
 .slider {
-  padding:0rem 1rem;
+  padding:0rem 0rem;
   max-width: 1400px;
   margin: 0 auto;
   color: var(--color-surface);
@@ -1210,6 +1214,7 @@ h1{
 /* Slides container (scrollable on desktop) */
 .slider .slides {
   height: 600px;
+  padding:0rem 1rem;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   scrollbar-width: none;

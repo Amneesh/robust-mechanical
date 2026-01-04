@@ -9,7 +9,7 @@ background-color: var(--color-background);
 
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
-  padding: 5rem 2rem;
+  padding: 5rem 1rem;
   max-width: 1400px;
   height: auto;
   margin: 0 auto;
