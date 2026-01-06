@@ -36,6 +36,26 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const joinUs = document.querySelector('.shake-effect');
+  let hasShaken = false; // to prevent repeated shaking
+
+  window.addEventListener('scroll', function () {
+    const rect = joinUs.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+    if (isVisible && !hasShaken) {
+      joinUs.classList.add('shake');
+      hasShaken = true;
+
+      // Optional: remove class after animation ends if you want it reusable
+      setTimeout(() => {
+        joinUs.classList.remove('shake');
+      }, 500);
+    }
+  });
+});
+
 // ===== Get Query Param Utility =====
 function getQueryParam(name) {
   const urlParams = new URLSearchParams(window.location.search);

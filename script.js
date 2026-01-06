@@ -98,25 +98,25 @@ toggleBtn.addEventListener('click', () => {
   socialPopup.classList.toggle('hidden');
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const joinUs = document.querySelector('.shake-effect');
-  let hasShaken = false; // to prevent repeated shaking
+// document.addEventListener('DOMContentLoaded', function () {
+//   const joinUs = document.querySelector('.shake-effect');
+//   let hasShaken = false; // to prevent repeated shaking
 
-  window.addEventListener('scroll', function () {
-    const rect = joinUs.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+//   window.addEventListener('scroll', function () {
+//     const rect = joinUs.getBoundingClientRect();
+//     const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
 
-    if (isVisible && !hasShaken) {
-      joinUs.classList.add('shake');
-      hasShaken = true;
+//     if (isVisible && !hasShaken) {
+//       joinUs.classList.add('shake');
+//       hasShaken = true;
 
-      // Optional: remove class after animation ends if you want it reusable
-      setTimeout(() => {
-        joinUs.classList.remove('shake');
-      }, 500);
-    }
-  });
-});
+//       // Optional: remove class after animation ends if you want it reusable
+//       setTimeout(() => {
+//         joinUs.classList.remove('shake');
+//       }, 500);
+//     }
+//   });
+// });
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".go-to-contact").forEach(button => {
     button.addEventListener("click", () => {
