@@ -113,12 +113,12 @@
     </section>
 
 
-    <section class="join-us shake-effect portfolio-join-us">
+    <!-- <section class="join-us shake-effect portfolio-join-us">
       <div class="join-us-container flex flex-col items-center justify-center gap-1">
         <h1><span class="color-accent">Seen enough?</span> Let’s build your next system together!</h1>
         <button class="robust-button-secondary go-to-contact">GET A QUOTE</button>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <div class="floating-social">
@@ -173,9 +173,11 @@
       <h1 id="subHeading">Reach Out <span class="color-accent">Today!</span></h1>
       <form class="subscribe-form flex flex-col gap-1" onsubmit="handleSubscribe(event)">
         <p id="subText">Skip the wait — tell us about your mechanical needs!</p>
-        <input type="email" id="subEmail" class="subscribe-input" name="email" placeholder="Enter your email"
-          required />
-        <button class="robust-button-primary" type="submit">Subscribe</button>
+        <div class="footer-sub-input">
+          <input type="email" id="subEmail" class="subscribe-input" name="email" placeholder="Enter your email"
+            required />
+          <button class="robust-button-primary" type="submit">Subscribe</button>
+        </div>
       </form>
 
       <div class="sub-success" id="subSuccess">

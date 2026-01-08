@@ -212,6 +212,8 @@
   align-self: center;
   justify-content: center;
   flex-grow: 1;
+  border-radius: 2rem;
+  overflow: hidden;
   flex-shrink: 0;
   grid-gap: .75em;
   padding: .75em;

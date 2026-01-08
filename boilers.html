@@ -263,8 +263,10 @@
       <h1 id="subHeading">Reach Out <span class="color-accent">Today!</span></h1>
       <form class="subscribe-form flex flex-col gap-1" onsubmit="handleSubscribe(event)">
         <p id="subText">Skip the wait — tell us what you need!</p>
-        <input type="email" id="subEmail" class="subscribe-input" placeholder="Enter your email" required />
-        <button class="robust-button-primary" type="submit">Subscribe</button>
+        <div class="footer-sub-input">
+          <input type="email" id="subEmail" class="subscribe-input" placeholder="Enter your email" required />
+          <button class="robust-button-primary" type="submit">Subscribe</button>
+        </div>
       </form>
 
       <div class="sub-success" id="subSuccess">
